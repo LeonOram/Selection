@@ -4,6 +4,7 @@
 
 full_date = input("Please enter the date in format dd mm yy: ")
 
+#seperate string
 day = full_date[0:2]
 month = full_date[3:5]
 year = full_date[6:8]
