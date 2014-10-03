@@ -2,7 +2,7 @@
 #03-10-2014
 #Selection S & C task 2
 
-full_date = input("Please enter the date in format dd mm yy: ")
+full_date = input("Please enter the date in format d m yy: ")
 
 #seperate string
 if len(full_date) == 6: #two single
@@ -22,6 +22,8 @@ elif len(full_date) == 8: #all double
     day = full_date[0:2]
     month = full_date[3:5]
     year = full_date[6:8]
+else:
+    print("Error in date format")
 
 if day[:1] == "0":
     day = day[1:]
