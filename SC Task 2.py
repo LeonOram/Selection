@@ -5,9 +5,23 @@
 full_date = input("Please enter the date in format dd mm yy: ")
 
 #seperate string
-day = full_date[0:2]
-month = full_date[3:5]
-year = full_date[6:8]
+if len(full_date) == 6: #two single
+    day = full_date[0:1]
+    month = full_date[2:3]
+    year = full_date[4:6]
+elif len(full_date) == 7: #one single
+    if full_date[1:2] == " ": #single number day
+        day = full_date[0:1]
+        month = full_date[2:4]
+        year = full_date[5:7]
+    else: #single number month 
+        day = full_date[0:2]
+        month = full_date[3:4]
+        year = full_date[5:7]
+elif len(full_date) == 8: #all double  
+    day = full_date[0:2]
+    month = full_date[3:5]
+    year = full_date[6:8]
 
 if day[:1] == "0":
     day = day[1:]
@@ -24,23 +38,23 @@ else:
 
 #find the month
 
-if month == "01":
+if month == "1":
     month_text = "January"
-elif month == "02":
+elif month == "2":
     month_text = "February"
-elif month == "03":
+elif month == "3":
     month_text = "March"
-elif month == "04":
+elif month == "4":
     month_text = "April"
-elif month == "05":
+elif month == "5":
     month_text = "May"
-elif month == "06":
+elif month == "6":
     month_text = "June"
-elif month == "07":
+elif month == "7":
     month_text = "July"
-elif month == "08":
+elif month == "8":
     month_text = "August"
-elif month == "09":
+elif month == "9":
     month_text = "September"
 elif month == "10":
     month_text = "October"
