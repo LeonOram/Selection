@@ -34,7 +34,6 @@ else:
 
 #get last two numbers to check if century
 last_two = year[2:4]
-print(last_two)
 year = int(year)
 
 if last_two == "00":
