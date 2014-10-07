@@ -27,16 +27,27 @@ else:
 
 if day[:1] == "0":
     day = day[1:]
+day_int = int(day)
+
+#finding how many days in said month
+if month == "4" or month == "6" or day == "9" or day == "11":
+    max_day = 30
+elif month == "2":
+    max_day = 29
+else:
+    max_day = 31
 
 #Add to end of date e.g. 1*st*
-if day == "1" or day == "21" or day == "31":
+if day == "1" or day == "21" or day == "31" and day_int <= max_day  :
     day_add = "st"
 elif day == "2" or day == "22":
     day_add = "nd"
 elif day == "3" or day == "23":
     day_add = "rd"
-else:
+elif day_int <= max_day:
     day_add = "th"
+else:
+    print("Error in day input")
 
 #find the month
 
@@ -65,14 +76,14 @@ elif month == "11":
 elif month == "12":
     month_text = "December"
 else:
-    print("Error")
+    print("Error Invalid format")
 
 # Finding if year = 1900s or 2000s
-year = int(year)
-print(year)
-if year <= 30:
+year_int = int(year)
+#print(year)
+if year_int <= 30:
     cent = "20"
-elif 30 < year >= 00:
+elif 30 < year_int >= 00:
     cent = "19"
 else:
     print("Invalid year")
